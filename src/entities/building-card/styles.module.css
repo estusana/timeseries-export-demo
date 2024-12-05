@@ -1,0 +1,32 @@
+.root {
+  padding: 1rem;
+  transition: all 150ms ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  box-shadow: var(--mantine-shadow-md) !important;
+  &:hover {
+    /* transform: scale(1.02); */
+    translate: 0 2px;
+    box-shadow: var(--mantine-shadow-sm) !important;
+  }
+  /* &:active {
+    translate: 0 2px;
+    box-shadow: var(--mantine-shadow-sm);
+  } */
+}
+
+.name {
+  color: #354052;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.description {
+  color: #868e96;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0.5rem 0 0 0;
+}

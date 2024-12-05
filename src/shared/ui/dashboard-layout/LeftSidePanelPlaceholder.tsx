@@ -9,6 +9,7 @@ import {
   IconProps,
   IconReport,
 } from "@tabler/icons-react";
+import { Link } from "react-router";
 
 interface MenuItemProps {
   data: {
@@ -17,12 +18,18 @@ interface MenuItemProps {
       IconProps & React.RefAttributes<Icon>
     >;
     isActive?: boolean;
+    url?: string;
   };
 }
 
 const menuPlaceholderItems = [
   { label: "Menu", Icon: IconMenu },
-  { label: "Buildings", Icon: IconBuildingSkyscraper, isActive: true },
+  {
+    label: "Buildings",
+    Icon: IconBuildingSkyscraper,
+    isActive: true,
+    url: "/buildings",
+  },
   { label: "Integrations", Icon: IconCloudDataConnection },
   { label: "Reports", Icon: IconReport },
   { label: "Apps", Icon: IconApps },
@@ -35,6 +42,7 @@ export const LeftSidePanelPlaceholder = () => {
       direction="column"
       justify={"space-between"}
       w="58px"
+      miw="58px"
       bg="#D4F4FF"
       h="100vh"
       align="center"
@@ -50,19 +58,21 @@ export const LeftSidePanelPlaceholder = () => {
 };
 
 const MenuItem = ({ data }: MenuItemProps) => {
-  const { label, Icon, isActive } = data;
+  const { label, Icon, url, isActive } = data;
   return (
     <Tooltip label={label} withArrow position="right">
-      <Flex
-        bg={isActive ? "#55CFFC" : "transparent"}
-        w="100%"
-        py="md"
-        justify="center"
-        align={"center"}
-        style={{ cursor: "pointer" }}
-      >
-        <Icon size={"24"} color={isActive ? "#fff" : "#354052"} />
-      </Flex>
+      <Link to={url ?? "/"}>
+        <Flex
+          bg={isActive ? "#55CFFC" : "transparent"}
+          w="100%"
+          py="md"
+          justify="center"
+          align={"center"}
+          style={{ cursor: "pointer" }}
+        >
+          <Icon size={"24"} color={isActive ? "#fff" : "#354052"} />
+        </Flex>
+      </Link>
     </Tooltip>
   );
 };

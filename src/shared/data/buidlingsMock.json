@@ -1,0 +1,544 @@
+{
+  "buildings": [
+    {
+      "id": "NC-ARF",
+      "name": "Advanced Research Facility",
+      "campus": "North Campus",
+      "type": "research",
+      "stats": {
+        "rooms": 24,
+        "meters": 8,
+        "totalArea": 45000,
+        "floors": 6
+      },
+      "status": "operational"
+    },
+    {
+      "id": "NC-BIC",
+      "name": "Biotech Innovation Center",
+      "campus": "North Campus",
+      "type": "laboratory",
+      "stats": {
+        "rooms": 32,
+        "meters": 12,
+        "totalArea": 52000,
+        "floors": 4
+      },
+      "status": "operational"
+    },
+    {
+      "id": "NC-CLC",
+      "name": "Chemistry Lab Complex",
+      "campus": "North Campus",
+      "type": "laboratory",
+      "stats": {
+        "rooms": 28,
+        "meters": 10,
+        "totalArea": 38000,
+        "floors": 3
+      },
+      "status": "maintenance"
+    },
+    {
+      "id": "NC-DC1",
+      "name": "Data Center North",
+      "campus": "North Campus",
+      "type": "infrastructure",
+      "stats": {
+        "rooms": 14,
+        "meters": 8,
+        "totalArea": 25000,
+        "floors": 2
+      },
+      "status": "operational"
+    },
+    {
+      "id": "NC-EBA",
+      "name": "Engineering Block A",
+      "campus": "North Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 45,
+        "meters": 15,
+        "totalArea": 65000,
+        "floors": 5
+      },
+      "status": "operational"
+    },
+    {
+      "id": "NC-EBB",
+      "name": "Engineering Block B",
+      "campus": "North Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 42,
+        "meters": 14,
+        "totalArea": 62000,
+        "floors": 5
+      },
+      "status": "alert"
+    },
+    {
+      "id": "NC-FOT",
+      "name": "Faculty Office Tower",
+      "campus": "North Campus",
+      "type": "office",
+      "stats": {
+        "rooms": 120,
+        "meters": 20,
+        "totalArea": 85000,
+        "floors": 12
+      },
+      "status": "operational"
+    },
+    {
+      "id": "NC-GSB",
+      "name": "Graduate Studies Building",
+      "campus": "North Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 56,
+        "meters": 16,
+        "totalArea": 72000,
+        "floors": 6
+      },
+      "status": "operational"
+    },
+    {
+      "id": "NC-HPC",
+      "name": "High-Performance Computing Center",
+      "campus": "North Campus",
+      "type": "infrastructure",
+      "stats": {
+        "rooms": 18,
+        "meters": 12,
+        "totalArea": 28000,
+        "floors": 2
+      },
+      "status": "operational"
+    },
+    {
+      "id": "NC-IHN",
+      "name": "Innovation Hub North",
+      "campus": "North Campus",
+      "type": "research",
+      "stats": {
+        "rooms": 34,
+        "meters": 10,
+        "totalArea": 48000,
+        "floors": 4
+      },
+      "status": "operational"
+    },
+    {
+      "id": "SC-ASC",
+      "name": "Academic Support Center",
+      "campus": "South Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 38,
+        "meters": 12,
+        "totalArea": 45000,
+        "floors": 4
+      },
+      "status": "operational"
+    },
+    {
+      "id": "SC-BSC",
+      "name": "Business School Complex",
+      "campus": "South Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 85,
+        "meters": 18,
+        "totalArea": 92000,
+        "floors": 8
+      },
+      "status": "maintenance"
+    },
+    {
+      "id": "SC-CCS",
+      "name": "Conference Center South",
+      "campus": "South Campus",
+      "type": "events",
+      "stats": {
+        "rooms": 24,
+        "meters": 8,
+        "totalArea": 38000,
+        "floors": 3
+      },
+      "status": "operational"
+    },
+    {
+      "id": "SC-DMC",
+      "name": "Digital Media Center",
+      "campus": "South Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 42,
+        "meters": 14,
+        "totalArea": 55000,
+        "floors": 5
+      },
+      "status": "operational"
+    },
+    {
+      "id": "SC-ESB",
+      "name": "Environmental Science Building",
+      "campus": "South Campus",
+      "type": "laboratory",
+      "stats": {
+        "rooms": 56,
+        "meters": 18,
+        "totalArea": 68000,
+        "floors": 6
+      },
+      "status": "maintenance"
+    },
+    {
+      "id": "SC-FAC",
+      "name": "Fine Arts Complex",
+      "campus": "South Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 65,
+        "meters": 12,
+        "totalArea": 72000,
+        "floors": 4
+      },
+      "status": "operational"
+    },
+    {
+      "id": "SC-GSC",
+      "name": "Global Studies Center",
+      "campus": "South Campus",
+      "type": "academic",
+      "stats": {
+        "rooms": 48,
+        "meters": 10,
+        "totalArea": 58000,
+        "floors": 5
+      },
+      "status": "operational"
+    },
+    {
+      "id": "SC-HTF",
+      "name": "Healthcare Training Facility",
+      "campus": "South Campus",
+      "type": "medical",
+      "stats": {
+        "rooms": 72,
+        "meters": 24,
+        "totalArea": 82000,
+        "floors": 7
+      },
+      "status": "operational"
+    },
+    {
+      "id": "SC-IH1",
+      "name": "International House",
+      "campus": "South Campus",
+      "type": "residential",
+      "stats": {
+        "rooms": 180,
+        "meters": 16,
+        "totalArea": 95000,
+        "floors": 12
+      },
+      "status": "alert"
+    },
+    {
+      "id": "DT-ADM",
+      "name": "Administration Tower",
+      "campus": "Downtown Campus",
+      "type": "administrative",
+      "stats": {
+        "rooms": 145,
+        "meters": 22,
+        "totalArea": 120000,
+        "floors": 15
+      },
+      "status": "operational"
+    },
+    {
+      "id": "DT-BIH",
+      "name": "Business Innovation Hub",
+      "campus": "Downtown Campus",
+      "type": "office",
+      "stats": {
+        "rooms": 95,
+        "meters": 18,
+        "totalArea": 88000,
+        "floors": 10
+      },
+      "status": "operational"
+    },
+    {
+      "id": "DT-CVO",
+      "name": "City View Office",
+      "campus": "Downtown Campus",
+      "type": "office",
+      "stats": {
+        "rooms": 165,
+        "meters": 25,
+        "totalArea": 135000,
+        "floors": 18
+      },
+      "status": "operational"
+    },
+    {
+      "id": "DT-CTC",
+      "name": "Corporate Training Center",
+      "campus": "Downtown Campus",
+      "type": "training",
+      "stats": {
+        "rooms": 48,
+        "meters": 12,
+        "totalArea": 52000,
+        "floors": 6
+      },
+      "status": "maintenance"
+    },
+    {
+      "id": "DT-EXC",
+      "name": "Downtown Executive Center",
+      "campus": "Downtown Campus",
+      "type": "office",
+      "stats": {
+        "rooms": 85,
+        "meters": 16,
+        "totalArea": 78000,
+        "floors": 9
+      },
+      "status": "operational"
+    },
+    {
+      "id": "DT-FDO",
+      "name": "Financial District Office",
+      "campus": "Downtown Campus",
+      "type": "office",
+      "stats": {
+        "rooms": 125,
+        "meters": 20,
+        "totalArea": 110000,
+        "floors": 14
+      },
+      "status": "operational"
+    },
+    {
+      "id": "DT-GOH",
+      "name": "Global Operations Hub",
+      "campus": "Downtown Campus",
+      "type": "office",
+      "stats": {
+        "rooms": 155,
+        "meters": 24,
+        "totalArea": 128000,
+        "floors": 16
+      },
+      "status": "alert"
+    },
+    {
+      "id": "MZ-APA",
+      "name": "Assembly Plant A",
+      "campus": "Manufacturing Zone",
+      "type": "manufacturing",
+      "stats": {
+        "rooms": 12,
+        "meters": 28,
+        "totalArea": 180000,
+        "floors": 2
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-APB",
+      "name": "Assembly Plant B",
+      "campus": "Manufacturing Zone",
+      "type": "manufacturing",
+      "stats": {
+        "rooms": 15,
+        "meters": 32,
+        "totalArea": 195000,
+        "floors": 2
+      },
+      "status": "maintenance"
+    },
+    {
+      "id": "MZ-DC1",
+      "name": "Distribution Center 1",
+      "campus": "Manufacturing Zone",
+      "type": "logistics",
+      "stats": {
+        "rooms": 8,
+        "meters": 18,
+        "totalArea": 150000,
+        "floors": 1
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-DC2",
+      "name": "Distribution Center 2",
+      "campus": "Manufacturing Zone",
+      "type": "logistics",
+      "stats": {
+        "rooms": 10,
+        "meters": 20,
+        "totalArea": 165000,
+        "floors": 1
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-ELM",
+      "name": "Electronics Manufacturing",
+      "campus": "Manufacturing Zone",
+      "type": "manufacturing",
+      "stats": {
+        "rooms": 24,
+        "meters": 45,
+        "totalArea": 125000,
+        "floors": 3
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-FAB",
+      "name": "Fabrication Plant",
+      "campus": "Manufacturing Zone",
+      "type": "manufacturing",
+      "stats": {
+        "rooms": 18,
+        "meters": 38,
+        "totalArea": 165000,
+        "floors": 2
+      },
+      "status": "alert"
+    },
+    {
+      "id": "MZ-LGH",
+      "name": "Logistics Hub",
+      "campus": "Manufacturing Zone",
+      "type": "logistics",
+      "stats": {
+        "rooms": 15,
+        "meters": 22,
+        "totalArea": 135000,
+        "floors": 2
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-MC1",
+      "name": "Manufacturing Center 1",
+      "campus": "Manufacturing Zone",
+      "type": "manufacturing",
+      "stats": {
+        "rooms": 22,
+        "meters": 42,
+        "totalArea": 185000,
+        "floors": 2
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-PFA",
+      "name": "Production Facility A",
+      "campus": "Manufacturing Zone",
+      "type": "manufacturing",
+      "stats": {
+        "rooms": 16,
+        "meters": 35,
+        "totalArea": 142000,
+        "floors": 2
+      },
+      "status": "maintenance"
+    },
+    {
+      "id": "MZ-QCC",
+      "name": "Quality Control Center",
+      "campus": "Manufacturing Zone",
+      "type": "laboratory",
+      "stats": {
+        "rooms": 28,
+        "meters": 15,
+        "totalArea": 45000,
+        "floors": 3
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-SCA",
+      "name": "Storage Complex Alpha",
+      "campus": "Manufacturing Zone",
+      "type": "storage",
+      "stats": {
+        "rooms": 6,
+        "meters": 12,
+        "totalArea": 120000,
+        "floors": 1
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-SCB",
+      "name": "Storage Complex Beta",
+      "campus": "Manufacturing Zone",
+      "type": "storage",
+      "stats": {
+        "rooms": 8,
+        "meters": 14,
+        "totalArea": 128000,
+        "floors": 1
+      },
+      "status": "operational"
+    },
+    {
+      "id": "MZ-WOP",
+      "name": "Warehouse Operations",
+      "campus": "Manufacturing Zone",
+      "type": "logistics",
+      "stats": {
+        "rooms": 12,
+        "meters": 24,
+        "totalArea": 175000,
+        "floors": 1
+      },
+      "status": "operational"
+    }
+  ],
+  "metadata": {
+    "totalBuildings": 156,
+    "lastUpdated": "2024-12-04T10:31:00Z",
+    "buildingTypes": [
+      "academic",
+      "research",
+      "laboratory",
+      "infrastructure",
+      "office",
+      "residential",
+      "administrative",
+      "sports",
+      "medical",
+      "utility"
+    ],
+    "campuses": [
+      "North Campus",
+      "South Campus",
+      "Downtown Campus",
+      "Research Park",
+      "Manufacturing Zone",
+      "Medical District",
+      "Sports Complex",
+      "Student Housing Area"
+    ],
+    "statusTypes": [
+      "operational",
+      "maintenance",
+      "alert",
+      "offline",
+      "construction"
+    ]
+  }
+}

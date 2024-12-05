@@ -1,0 +1,65 @@
+.root {
+  --transition-default: opacity 0.3s ease, visibility 0s;
+  --transition-hovered: opacity 0.3s ease, visibility 0.3s;
+  position: relative;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #a1a1aa;
+  transition: background-color 0.3s ease;
+  background-color: white;
+  &:hover {
+    background-color: rgb(238, 249, 255);
+    .cardContent {
+      visibility: hidden;
+      opacity: 0;
+      transition: var(--transition-hovered);
+    }
+    .actionBtn {
+      visibility: visible;
+      opacity: 1;
+      transition: var(--transition-default);
+    }
+  }
+}
+
+.cardContent {
+  transition: var(--transition-default);
+}
+
+.name {
+  color: #354052;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.description {
+  color: #868e96;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0.5rem 0 0 0;
+}
+
+.updated {
+  color: #868e96;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0.8rem 0 0 0;
+}
+
+.actionBtn {
+  /* display: none !important; */
+  position: absolute !important;
+  top: calc(50%);
+  bottom: 0;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  max-width: max-content;
+  margin: 0 auto;
+  transition: var(--transition-hovered);
+}
