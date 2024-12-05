@@ -1,7 +1,7 @@
 import { Card, Text } from "@mantine/core";
-import { Building } from "../../shared/data/types";
+import { Building } from "@/shared/data/types";
 import { Link } from "react-router";
-import styles from "./styles.module.css";
+import styles from "./BuildingCard.module.css";
 
 export const BuildingCard = ({ name, stats, id }: Building) => {
   return (

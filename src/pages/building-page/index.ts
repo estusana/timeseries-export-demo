@@ -1,1 +1,1 @@
-export { BuildingPage } from './ui'
+export { BuildingPage } from './ui/BuildingPage'

@@ -1,7 +1,7 @@
 import { Button, Card, Text } from "@mantine/core";
 import { Link } from "react-router";
-import styles from "./styles.module.css";
-import { Room } from "../../shared/data/types";
+import { Room } from "@/shared/";
+import styles from "./RoomCard.module.css";
 interface RoomCardProps extends Room {
   onBtnClick: () => void;
 }

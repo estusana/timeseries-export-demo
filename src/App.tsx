@@ -7,7 +7,12 @@ import "@mantine/dates/styles.css";
 
 function App() {
   return (
-    <MantineProvider>
+    <MantineProvider
+      theme={{
+        fontFamily: "Inter, sans-serif",
+        headings: { fontFamily: "Inter, sans-serif" },
+      }}
+    >
       <BrowserRouter>
         <Routes>
           <Route element={<DashboardLayout />}>

@@ -1,9 +1,9 @@
 import { Grid } from "@mantine/core";
-import { BuildingCard } from "../../entities";
+import { BuildingCard } from "@/entities";
 import { useEffect, useState } from "react";
-import { Building } from "../../shared/data/types";
-import BuildingData from "../../shared/data/buidlingsMock.json";
-import { sleep } from "../../shared/lib/sleep";
+import { sleep } from "@/shared/";
+import type { Building } from "@/shared/";
+import BuildingData from "@/shared/data/buidlingsMock.json";
 
 export const BuildingsList = () => {
   const [buildings, setBuildings] = useState<Array<Building>>([]);

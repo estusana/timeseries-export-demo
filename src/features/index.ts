@@ -1,1 +1,1 @@
-export { DataModal } from './download-data'
+export { ExportModal } from './export-modal'

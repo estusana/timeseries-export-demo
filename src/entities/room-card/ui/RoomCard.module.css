@@ -12,6 +12,7 @@
   background-color: white;
   &:hover {
     background-color: rgb(238, 249, 255);
+    border-color: #77bbff;
     .cardContent {
       visibility: hidden;
       opacity: 0;

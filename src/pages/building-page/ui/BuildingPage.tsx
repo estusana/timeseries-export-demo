@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import {
   Breadcrumbs as MantineBreadCrumbs,
   Center,
@@ -5,16 +6,14 @@ import {
   Grid,
   Text,
 } from "@mantine/core";
-import { useState, useEffect, useCallback } from "react";
-import { Link, useParams } from "react-router";
-import { Building, Meter, Room } from "../../shared/data/types";
-import { sleep } from "../../shared/lib/sleep";
-import BuildingData from "../../shared/data/buidlingsMock.json";
-import styles from "./styles.module.css";
-import { generateBuildingData } from "../../shared/data/generateBuildingData";
-import { RoomCard } from "../../entities";
 import { useDisclosure } from "@mantine/hooks";
-import { DataModal } from "../../features";
+import { Link, useParams } from "react-router";
+import { sleep, Building, Meter, Room } from "@/shared/";
+import BuildingData from "@/shared/data/buidlingsMock.json";
+import { generateBuildingData } from "@/shared/data/generateBuildingData";
+import { RoomCard } from "@/entities";
+import { ExportModal } from "@/features";
+import styles from "./BuildingPage.module.css";
 
 export const BuildingPage = () => {
   const { buildingId } = useParams();
@@ -25,12 +24,12 @@ export const BuildingPage = () => {
   const [selectedSourceType, setSelectedSourceType] = useState<
     "meter" | "room" | null
   >(null);
-  const [selectedSourceId, setSelectedSourceId] = useState<string | null>(null);
+  const [selectedSource, setSelectedSource] = useState<Room | null>(null);
   const [opened, { open, close }] = useDisclosure(false);
 
-  const handleCloseDataModal = useCallback(() => {
+  const handleCloseExportModal = useCallback(() => {
     close();
-    setSelectedSourceId(null);
+    setSelectedSource(null);
     setSelectedSourceType(null);
   }, [close]);
 
@@ -71,7 +70,7 @@ export const BuildingPage = () => {
               {...item}
               onBtnClick={() => {
                 setSelectedSourceType("room");
-                setSelectedSourceId(item.id);
+                setSelectedSource(item);
                 open();
               }}
             />
@@ -87,11 +86,11 @@ export const BuildingPage = () => {
           </Grid.Col>
         ))}
       </Grid>
-      <DataModal
+      <ExportModal
         opened={opened}
-        close={handleCloseDataModal}
+        close={handleCloseExportModal}
         sourceType={selectedSourceType}
-        sourceId={selectedSourceId}
+        source={selectedSource}
       />
     </>
   );

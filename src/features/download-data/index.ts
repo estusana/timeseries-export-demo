@@ -1,1 +1,0 @@
-export { DataModal } from './ui'

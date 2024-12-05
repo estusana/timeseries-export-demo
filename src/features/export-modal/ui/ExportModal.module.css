@@ -1,0 +1,24 @@
+.rangePresets {
+  padding: 0.8rem;
+  background-color: #f6f6f6;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.root :global .mantine-Modal-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #354052;
+  padding: 0.5rem;
+  line-height: 1.2em;
+}
+
+.description {
+  font-size: 14px;
+  padding: 0.4rem;
+  width: 180px;
+  color: #354052;
+  b {
+    font-weight: 600;
+  }
+}
