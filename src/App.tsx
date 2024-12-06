@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { MantineProvider } from "@mantine/core";
+import { ModalsProvider } from "@mantine/modals";
 import { BuildingsList, Home, BuildingPage } from "./pages";
-import { DashboardLayout } from "./shared/ui";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 
@@ -13,15 +13,15 @@ function App() {
         headings: { fontFamily: "Inter, sans-serif" },
       }}
     >
-      <BrowserRouter>
-        <Routes>
-          <Route element={<DashboardLayout />}>
+      <ModalsProvider>
+        <BrowserRouter>
+          <Routes>
             <Route index element={<Home />} />
             <Route path="/buildings" element={<BuildingsList />} />
             <Route path="/buildings/:buildingId" element={<BuildingPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </ModalsProvider>
     </MantineProvider>
   );
 }

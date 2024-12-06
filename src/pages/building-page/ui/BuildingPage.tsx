@@ -1,19 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
-import {
-  Breadcrumbs as MantineBreadCrumbs,
-  Center,
-  Loader,
-  Grid,
-  Text,
-} from "@mantine/core";
+import { Center, Loader, Grid, Tabs } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Link, useParams } from "react-router";
-import { sleep, Building, Meter, Room } from "@/shared/";
+import { useParams } from "react-router";
+import { sleep, Building, Meter, Room } from "@/shared";
+import { DashboardLayout as Layout } from "@/widgets";
 import BuildingData from "@/shared/data/buidlingsMock.json";
 import { generateBuildingData } from "@/shared/data/generateBuildingData";
-import { RoomCard } from "@/entities";
 import { ExportModal } from "@/features";
-import styles from "./BuildingPage.module.css";
+import { MeterCard, RoomCard } from "@/entities/display-card";
+import { BreadcrumbItem } from "@/shared/ui/breadcrumbs/ui/Breadcrumbs";
 
 export const BuildingPage = () => {
   const { buildingId } = useParams();
@@ -24,7 +19,9 @@ export const BuildingPage = () => {
   const [selectedSourceType, setSelectedSourceType] = useState<
     "meter" | "room" | null
   >(null);
-  const [selectedSource, setSelectedSource] = useState<Room | null>(null);
+  const [selectedSource, setSelectedSource] = useState<Room | Meter | null>(
+    null
+  );
   const [opened, { open, close }] = useDisclosure(false);
 
   const handleCloseExportModal = useCallback(() => {
@@ -52,6 +49,17 @@ export const BuildingPage = () => {
     initData();
   }, [buildingId]);
 
+  const breadCrumbItems: BreadcrumbItem[] = [
+    {
+      label: "Buildings",
+      link: "/buildings",
+    },
+    {
+      label: building?.name || "",
+      id: building?.id,
+    },
+  ];
+
   if (isLoading)
     return (
       <Center h="90vh">
@@ -60,53 +68,58 @@ export const BuildingPage = () => {
     );
 
   return (
-    <>
-      <Breadcrumbs {...building} />
-      <Text>Rooms</Text>
-      <Grid gutter={{ base: "xs", xs: "md", md: "xl", xl: 30 }}>
-        {rooms.map((item) => (
-          <Grid.Col key={item.id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
-            <RoomCard
-              {...item}
-              onBtnClick={() => {
-                setSelectedSourceType("room");
-                setSelectedSource(item);
-                open();
-              }}
-            />
-          </Grid.Col>
-        ))}
-      </Grid>
+    <Layout breadCrumbItems={breadCrumbItems}>
+      <Tabs defaultValue="rooms">
+        <Tabs.List mb="xl">
+          <Tabs.Tab value="rooms" style={{ fontSize: "17px" }}>
+            Rooms
+          </Tabs.Tab>
+          <Tabs.Tab value="meters" style={{ fontSize: "17px" }}>
+            Meters
+          </Tabs.Tab>
+        </Tabs.List>
 
-      <Text>Meters</Text>
-      <Grid gutter={{ base: "xs", xs: "md", md: "xl", xl: 30 }}>
-        {meters.map((item) => (
-          <Grid.Col key={item.id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
-            {/* <MeterCard {...item} /> */}
-          </Grid.Col>
-        ))}
-      </Grid>
+        <Tabs.Panel value="rooms">
+          <Grid gutter={{ base: "xs", xs: "md", md: "xl", xl: 30 }}>
+            {rooms.map((item) => (
+              <Grid.Col key={item.id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
+                <RoomCard
+                  room={item}
+                  onBtnClick={() => {
+                    setSelectedSourceType("room");
+                    setSelectedSource(item);
+                    open();
+                  }}
+                />
+              </Grid.Col>
+            ))}
+          </Grid>
+        </Tabs.Panel>
+
+        <Tabs.Panel value="meters">
+          <Grid gutter={{ base: "xs", xs: "md", md: "xl", xl: 30 }}>
+            {meters.map((item) => (
+              <Grid.Col key={item.id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
+                <MeterCard
+                  meter={item}
+                  onBtnClick={() => {
+                    setSelectedSourceType("meter");
+                    setSelectedSource(item);
+                    open();
+                  }}
+                />
+              </Grid.Col>
+            ))}
+          </Grid>
+        </Tabs.Panel>
+      </Tabs>
+
       <ExportModal
         opened={opened}
         close={handleCloseExportModal}
         sourceType={selectedSourceType}
         source={selectedSource}
       />
-    </>
-  );
-};
-
-const Breadcrumbs = ({ name, id }: Partial<Building>) => {
-  if (!name || !id) return null;
-
-  return (
-    <MantineBreadCrumbs>
-      <Link to={`/buildings/`} className={styles.breadcrumbItem}>
-        Buildings
-      </Link>
-      <p className={styles.breadcrumbItem}>
-        {name} ({id})
-      </p>
-    </MantineBreadCrumbs>
+    </Layout>
   );
 };

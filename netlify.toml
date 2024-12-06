@@ -1,0 +1,15 @@
+# netlify.toml
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/"
+  to = "/buildings/"
+  status = 302
+  force = true
+
+[build]
+  publish = "dist"  

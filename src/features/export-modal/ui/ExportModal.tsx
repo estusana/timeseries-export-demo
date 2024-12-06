@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -10,20 +11,19 @@ import {
   Text,
   Alert,
 } from "@mantine/core";
-import { useEffect, useState } from "react";
-import { DatePicker } from "@mantine/dates";
 import { IconDownload, IconAlertCircle } from "@tabler/icons-react";
 import styles from "./ExportModal.module.css";
 import { MenuButton } from "../../../shared/ui";
-import { Room, sleep } from "@/shared";
+import { Meter, Room, sleep } from "@/shared";
 import { useExport } from "../lib/useExport";
+import { DatePicker } from "@mantine/dates";
 import { calculateDateRange } from "../lib/calculateDateRange";
 
 interface ExportModalProps {
   opened: boolean;
   close: () => void;
   sourceType: "meter" | "room" | null;
-  source: Room | null;
+  source: Room | Meter | null;
 }
 
 export const ExportModal = ({
@@ -111,6 +111,8 @@ export const ExportModal = ({
               allowSingleDateInRange
               value={dateRange}
               onChange={handleDateChange}
+              // This line prevents selecting future dates:
+              // maxDate={new Date()}
               my="sm"
             />
             <div>
