@@ -1,0 +1,32 @@
+.rangePresets {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+  /* margin-top: 2.5rem; */
+  width: fit-content;
+  min-width: 190px;
+}
+
+.description {
+  font-size: 14px;
+  padding: 0.4rem;
+  width: 220px;
+  color: #354052;
+  b {
+    font-weight: 600;
+  }
+}
+
+.wrapper {
+  background-color: #f1f5f9;
+  border-radius: 6px;
+  padding: 1.6rem;
+  max-width: max-content;
+}
+
+.instr {
+  font-size: 18px !important;
+  padding: 0.4rem !important;
+  color: #354052 !important;
+  font-weight: 500 !important;
+}

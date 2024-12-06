@@ -11,7 +11,7 @@ export const BuildingsList = () => {
   useEffect(() => {
     // mocking data fetch
     const initData = async () => {
-      await sleep(100);
+      await sleep(0);
       setBuildings(BuildingData.buildings as Array<Building>);
     };
 

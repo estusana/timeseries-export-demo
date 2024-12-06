@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Center, Loader, Grid, Tabs } from "@mantine/core";
+import { Grid, Tabs } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useParams } from "react-router";
 import { sleep, Building, Meter, Room } from "@/shared";
@@ -33,7 +33,7 @@ export const BuildingPage = () => {
   useEffect(() => {
     // mocking data fetch
     const initData = async () => {
-      await sleep(450);
+      await sleep(350);
       const buildingData = BuildingData.buildings.find(
         (v) => v.id === buildingId
       );
@@ -60,15 +60,8 @@ export const BuildingPage = () => {
     },
   ];
 
-  if (isLoading)
-    return (
-      <Center h="90vh">
-        <Loader />
-      </Center>
-    );
-
   return (
-    <Layout breadCrumbItems={breadCrumbItems}>
+    <Layout breadCrumbItems={breadCrumbItems} loading={isLoading}>
       <Tabs defaultValue="rooms">
         <Tabs.List mb="xl">
           <Tabs.Tab value="rooms" style={{ fontSize: "17px" }}>

@@ -9,15 +9,15 @@ import {
   IconProps,
   IconReport,
 } from "@tabler/icons-react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 interface MenuItemProps {
+  isActive: boolean;
   data: {
     label: string;
     Icon: React.ForwardRefExoticComponent<
       IconProps & React.RefAttributes<Icon>
     >;
-    isActive?: boolean;
     url?: string;
   };
 }
@@ -27,16 +27,17 @@ const menuPlaceholderItems = [
   {
     label: "Buildings",
     Icon: IconBuildingSkyscraper,
-    isActive: true,
     url: "/buildings",
   },
-  { label: "Integrations", Icon: IconCloudDataConnection },
+  { label: "Export", Icon: IconCloudDataConnection, url: "/export" },
   { label: "Reports", Icon: IconReport },
   { label: "Apps", Icon: IconApps },
   { label: "Settings", Icon: IconAdjustmentsAlt },
 ];
 
 export const LeftSidePanelPlaceholder = () => {
+  const { pathname } = useLocation();
+
   return (
     <Flex
       direction="column"
@@ -49,7 +50,11 @@ export const LeftSidePanelPlaceholder = () => {
     >
       <Stack gap="0" w="100%">
         {menuPlaceholderItems.map((item) => (
-          <MenuItem data={item} key={item.label} />
+          <MenuItem
+            data={item}
+            key={item.label}
+            isActive={!!item.url && getBasePath(pathname) === item.url}
+          />
         ))}
       </Stack>
       <UserAccount />
@@ -57,8 +62,8 @@ export const LeftSidePanelPlaceholder = () => {
   );
 };
 
-const MenuItem = ({ data }: MenuItemProps) => {
-  const { label, Icon, url, isActive } = data;
+const MenuItem = ({ data, isActive }: MenuItemProps) => {
+  const { label, Icon, url } = data;
   return (
     <Tooltip label={label} withArrow position="right">
       <Link to={url ?? "/"}>
@@ -89,3 +94,11 @@ const UserAccount = () => {
     </Tooltip>
   );
 };
+
+function getBasePath(path: string) {
+  // Split the path by '/' and filter out empty strings
+  const parts = path.split("/").filter(Boolean);
+
+  // Return the first segment with a leading slash
+  return "/" + parts[0];
+}
