@@ -1,6 +1,46 @@
 # Buildings Time Series Feature
 
-A React demo application for exporting time series data.
+A React demo application for exporting time series data, created as a technical assessment for a job application.
+
+## Project Overview
+
+This project was built in response to a UI design & implementation task that required creating a high-fidelity mockup and implementing a feature that allows users to download time series data from electricity meters and rooms within buildings.
+
+### Task Requirements
+
+The feature needed to:
+- Allow users to select a time series (associated with either an electricity meter or a room)
+- Include a date range picker
+- Enable users to choose file format for download (CSV or JSON)
+- Provide appropriate feedback after initiating download
+- Simulate API calls with both successful and failed responses
+- Display mock data in a modal upon successful download
+
+### Implementation Approach
+
+I implemented two different approaches to solve this problem:
+
+**1. Contextual Export (First Approach)**
+- Export functionality tied to specific rooms and meters
+- Users navigate through building hierarchy to access building pages
+- Each room/meter has its own 'Export' button that opens a modal
+- Maintains context and is intuitive when viewing specific asset data
+
+**2. Centralized Export Page (Second Approach)**
+- Dedicated data export interface with hierarchy selectors
+- Building dropdown with search functionality (accounting for hundreds of buildings)
+- Asset type selection (Room/Meter)
+- Single, dedicated interface for all data exports
+
+**Technical Note**: The export button simulates failed API requests on first click, returning success on the second click to demonstrate error handling.
+
+### Deliverables
+
+1. **High-fidelity mockup**: [Figma Design](https://www.figma.com/design/XXdvRqfE2dDUrtEbEvTvZG/Export-Data-Feature?node-id=0-1&p=f)
+2. **Hosted demo**: 
+   - [Approach 1: Contextual Export](https://timeseries-export.netlify.app/buildings) (export from room/meter cards)
+   - [Approach 2: Centralized Export](https://timeseries-export.netlify.app/export) (dedicated export page)
+3. **Complete React implementation**: This repository with source code
 
 ## Tech Stack
 
